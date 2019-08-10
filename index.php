@@ -5,6 +5,6 @@
     <title>Rapport de stage</title>
   </head>
   <body>
-
+    <h1>Work in progress</h1>
   </body>
 </html>
