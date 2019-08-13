@@ -1,0 +1,109 @@
+@import 'vars.scss';
+@font-face {
+	src: url(../assets/fonts/FrankRuhlLibre-Bold.ttf);
+	font-family: 'FrankRuhl-Bold';
+}
+@font-face {
+	src: url(../assets/fonts/FrankRuhlLibre-Regular.ttf);
+	font-family: 'FrankRuhl-Regular';
+}
+@font-face {
+	src: url(../assets/fonts/Roboto-Regular.ttf);
+	font-family: 'Roboto';
+}
+html {
+	font-size: 18px;
+}
+body {
+	font-size: 100%;
+	margin: 0;
+	font-family: $fontTexte;
+}
+
+// fonts
+h1,
+h2,
+h3,
+p {
+	color: $mainColor;
+}
+h1,
+h2 {
+	font-family: $fontTitre;
+}
+h1 {
+	font-size: 2.8rem;
+}
+h2 {
+	font-size: 1.9rem;
+}
+p {
+	line-height: 1.4;
+}
+//grids
+.grid100 {
+	flex: 100%;
+	max-width: 100%;
+}
+.grid66 {
+	flex: calc(100% * 2 / 3);
+	max-width: calc(100% * 2 / 3);
+}
+.grid60 {
+	flex: 60%;
+	max-width: 60%;
+}
+.grid50 {
+	flex: 50%;
+	max-width: 50%;
+}
+.grid40 {
+	flex: 40%;
+	max-width: 40%;
+}
+.grid33 {
+	flex: calc(100% / 3);
+	max-width: calc(100% / 3);
+}
+.grid25 {
+	flex: 25%;
+	max-width: 25%;
+}
+// layouts
+.innerWidth {
+	margin: auto;
+	@media (min-width: 768px) {
+		max-width: 60%;
+	}
+}
+.smallWidth {
+	margin: auto;
+	@media (min-width: 768px) {
+		max-width: 580px;
+	}
+}
+
+// templates
+.grid-double {
+	display: flex;
+}
+// parties
+.first-screen {
+	min-height: 100vh;
+	.intro {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding-left: 100px;
+		.content {
+			max-width: 80%;
+		}
+	}
+	.fullVisuel {
+		background: $peach;
+	}
+}
+.main-content {
+	margin: auto;
+}

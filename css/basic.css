@@ -1,0 +1,122 @@
+@font-face {
+  src: url(../assets/fonts/FrankRuhlLibre-Bold.ttf);
+  font-family: 'FrankRuhl-Bold'; }
+
+@font-face {
+  src: url(../assets/fonts/FrankRuhlLibre-Regular.ttf);
+  font-family: 'FrankRuhl-Regular'; }
+
+@font-face {
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+  font-family: 'Roboto'; }
+
+html {
+  font-size: 18px; }
+
+body {
+  font-size: 100%;
+  margin: 0;
+  font-family: "FrankRuhl-Regular"; }
+
+h1,
+h2,
+h3,
+p {
+  color: #3a007e; }
+
+h1,
+h2 {
+  font-family: "FrankRuhl-Bold"; }
+
+h1 {
+  font-size: 2.8rem; }
+
+h2 {
+  font-size: 1.9rem; }
+
+p {
+  line-height: 1.4; }
+
+.grid100 {
+  -webkit-box-flex: 100%;
+  -ms-flex: 100%;
+  flex: 100%;
+  max-width: 100%; }
+
+.grid66 {
+  -webkit-box-flex: calc(100% * 2 / 3);
+  -ms-flex: calc(100% * 2 / 3);
+  flex: calc(100% * 2 / 3);
+  max-width: calc(100% * 2 / 3); }
+
+.grid60 {
+  -webkit-box-flex: 60%;
+  -ms-flex: 60%;
+  flex: 60%;
+  max-width: 60%; }
+
+.grid50 {
+  -webkit-box-flex: 50%;
+  -ms-flex: 50%;
+  flex: 50%;
+  max-width: 50%; }
+
+.grid40 {
+  -webkit-box-flex: 40%;
+  -ms-flex: 40%;
+  flex: 40%;
+  max-width: 40%; }
+
+.grid33 {
+  -webkit-box-flex: calc(100% / 3);
+  -ms-flex: calc(100% / 3);
+  flex: calc(100% / 3);
+  max-width: calc(100% / 3); }
+
+.grid25 {
+  -webkit-box-flex: 25%;
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%; }
+
+.innerWidth {
+  margin: auto; }
+  @media (min-width: 768px) {
+    .innerWidth {
+      max-width: 60%; } }
+
+.smallWidth {
+  margin: auto; }
+  @media (min-width: 768px) {
+    .smallWidth {
+      max-width: 580px; } }
+
+.grid-double {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.first-screen {
+  min-height: 100vh; }
+  .first-screen .intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 100px; }
+    .first-screen .intro .content {
+      max-width: 80%; }
+  .first-screen .fullVisuel {
+    background: #ffb997; }
+
+.main-content {
+  margin: auto; }
