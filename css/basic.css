@@ -18,6 +18,10 @@ body {
   margin: 0;
   font-family: "FrankRuhl-Regular"; }
 
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 h1,
 h2,
 h3,
@@ -65,6 +69,12 @@ a {
   flex: 50%;
   max-width: 50%; }
 
+.grid45 {
+  -webkit-box-flex: 45%;
+  -ms-flex: 45%;
+  flex: 45%;
+  max-width: 45%; }
+
 .grid40 {
   -webkit-box-flex: 40%;
   -ms-flex: 40%;
@@ -97,9 +107,23 @@ a {
 
 header {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   z-index: 2;
   padding: 20px 80px; }
+  header::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background-color: #3a007e;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out; }
   header .burger-icon {
     position: relative;
     -webkit-transition: 0.2s ease-in-out;
@@ -279,11 +303,54 @@ header {
             margin-right: 20px; }
       header .menu .menu-container-right img {
         max-height: 100vh; }
+  header.scrolled {
+    background: #fff;
+    -webkit-box-shadow: 0px 2px 11px rgba(255, 185, 151, 0.26);
+    box-shadow: 0px 2px 11px rgba(255, 185, 151, 0.26); }
+    header.scrolled .navigation {
+      opacity: 1; }
+  header .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    opacity: 0;
+    color: #3a007e;
+    -webkit-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out; }
+    header .navigation .title {
+      font-family: "FrankRuhl-Bold";
+      font-size: 1.2rem; }
+    header .navigation > a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      header .navigation > a img {
+        max-width: 20px; }
+      header .navigation > a span {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        opacity: 0.66; }
+      header .navigation > a.previous img {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg); }
 
 .grid-double {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  .grid-double img {
+    max-width: 100%; }
 
 .first-screen {
   min-height: 100vh; }
@@ -342,6 +409,50 @@ header {
       -o-object-fit: cover;
       object-fit: cover;
       max-width: 100%; }
+
+.carousel-realisations-container {
+  overflow: hidden; }
+  .carousel-realisations-container .realisations-liste {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .carousel-realisations-container .realisations-liste .realisation {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-negative: 0;
+      flex-shrink: 0; }
+      .carousel-realisations-container .realisations-liste .realisation-visuel img {
+        max-width: 100%; }
+      .carousel-realisations-container .realisations-liste .realisation-legende {
+        text-align: center; }
+      .carousel-realisations-container .realisations-liste .realisation:not(:last-of-type) {
+        margin-right: 5%; }
+
+.carousel-realisations-controls {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: auto; }
+  .carousel-realisations-controls > div:hover {
+    cursor: pointer; }
+  .carousel-realisations-controls > div img {
+    height: 40px; }
+  .carousel-realisations-controls .control-left img {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg); }
 
 .main-content {
   margin: auto; }

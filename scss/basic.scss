@@ -19,7 +19,9 @@ body {
 	margin: 0;
 	font-family: $fontTexte;
 }
-
+* {
+	box-sizing: border-box;
+}
 // fonts
 h1,
 h2,
@@ -61,6 +63,10 @@ a {
 	flex: 50%;
 	max-width: 50%;
 }
+.grid45 {
+	flex: 45%;
+	max-width: 45%;
+}
 .grid40 {
 	flex: 40%;
 	max-width: 40%;
@@ -89,9 +95,20 @@ a {
 //header
 header {
 	position: fixed;
+	display: flex;
 	width: 100%;
 	z-index: 2;
 	padding: 20px 80px;
+	&::after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 0;
+		background-color: $mainColor;
+		bottom: 0;
+		left: 0;
+		transition: 0.2s ease-in-out;
+	}
 	.burger-icon {
 		position: relative;
 		transition: 0.2s ease-in-out;
@@ -247,10 +264,49 @@ header {
 			}
 		}
 	}
+	&.scrolled {
+		background: #fff;
+		box-shadow: 0px 2px 11px rgba(255, 185, 151, 0.26);
+		.navigation {
+			opacity: 1;
+		}
+	}
+	.navigation {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-around;
+		opacity: 0;
+		color: $mainColor;
+		transition: 0.2s ease-in-out;
+		.title {
+			font-family: $fontTitre;
+			font-size: 1.2rem;
+		}
+		> a {
+			display: flex;
+			align-items: center;
+			img {
+				max-width: 20px;
+			}
+			span {
+				flex-shrink: 0;
+				opacity: 0.66;
+			}
+			&.previous {
+				img {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
 }
 // templates
 .grid-double {
 	display: flex;
+	img {
+		max-width: 100%;
+	}
 }
 // parties
 .first-screen {
@@ -297,6 +353,50 @@ header {
 		img {
 			object-fit: cover;
 			max-width: 100%;
+		}
+	}
+}
+.carousel-realisations {
+	&-container {
+		overflow: hidden;
+		.realisations-liste {
+			display: flex;
+			align-items: center;
+			.realisation {
+				display: flex;
+				flex-direction: column;
+				flex-shrink: 0;
+				&-visuel {
+					img {
+						max-width: 100%;
+					}
+				}
+				&-legende {
+					text-align: center;
+				}
+				&:not(:last-of-type) {
+					margin-right: 5%;
+				}
+			}
+		}
+	}
+	&-controls {
+		width: 30%;
+		display: flex;
+		justify-content: space-between;
+		margin: auto;
+		> div {
+			&:hover {
+				cursor: pointer;
+			}
+			img {
+				height: 40px;
+			}
+		}
+		.control-left {
+			img {
+				transform: rotate(180deg);
+			}
 		}
 	}
 }
