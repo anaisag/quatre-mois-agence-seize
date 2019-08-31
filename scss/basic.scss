@@ -348,7 +348,6 @@ header {
 		}
 	}
 	.fullVisuel {
-		background: $peach;
 		display: flex;
 		img {
 			object-fit: cover;
@@ -362,10 +361,22 @@ header {
 		.realisations-liste {
 			display: flex;
 			align-items: center;
+			transition: 0.3s ease-in-out;
 			.realisation {
 				display: flex;
 				flex-direction: column;
 				flex-shrink: 0;
+				transform: scale(0.9);
+				opacity: 0.5;
+				transition: 0.2s ease-in-out;
+				&.active {
+					transform: scale(1);
+					opacity: 1;
+					.realisation-legende {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
 				&-visuel {
 					img {
 						max-width: 100%;
@@ -373,9 +384,11 @@ header {
 				}
 				&-legende {
 					text-align: center;
+					opacity: 0;
+					transform: translateY(10px);
 				}
 				&:not(:last-of-type) {
-					margin-right: 5%;
+					margin-right: 25px;
 				}
 			}
 		}

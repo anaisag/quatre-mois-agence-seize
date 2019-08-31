@@ -1,0 +1,36 @@
+.agence {
+	.first-screen {
+		flex-direction: column;
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		min-height: 105vh;
+		.intro {
+			text-align: center;
+			.sous-titres {
+				align-items: center;
+			}
+		}
+		.video {
+			display: flex;
+			max-height: 69vh;
+			overflow: hidden;
+			video {
+				min-width: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+		.shape {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			min-width: 100%;
+			max-width: 100%;
+			transform: translateY(75%);
+		}
+	}
+	.main-content {
+		position: relative;
+	}
+}
