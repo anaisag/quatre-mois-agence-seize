@@ -1,0 +1,12 @@
+@import '../vars.scss';
+.home {
+	h1 {
+		font-size: 5rem;
+	}
+	h2 {
+		font-family: $fontTexte;
+	}
+	strong {
+		color: $purple;
+	}
+}
