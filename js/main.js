@@ -1,3 +1,7 @@
+new Freezeframe({
+	selector: '.interview',
+	trigger: 'click',
+});
 //fonctionnement du menu
 const menuIcon = document.querySelector('.burger-icon');
 const menu = document.querySelector('.menu');
@@ -37,7 +41,7 @@ function scrollNavigation() {
 const carousels = document.querySelectorAll('.carousel-realisations');
 
 carousels.forEach(function(carousel) {
-	let slide = 2;
+	let slide = 1;
 	const container = carousel.querySelector('.realisations-liste');
 	const liste = container.querySelectorAll('.realisation');
 	////// Zoom au clic sur une image
@@ -57,33 +61,47 @@ carousels.forEach(function(carousel) {
 		popIn.style.display = 'none';
 	});
 	// centrer la deuxième slide
-	const secondSlide = container.querySelector('.realisation[data-real="2"]');
+	const secondSlide = container.querySelector('.realisation[data-real="1"]');
 	secondSlide.classList.add('active');
 	const defaultCenter =
 		(container.getBoundingClientRect().width - secondSlide.getBoundingClientRect().width) / 2 - 25;
-	container.style.transform = 'translateX(-' + defaultCenter + 'px)';
+	container.style.transform = 'translateX(calc(-45% + ' + defaultCenter + 'px))';
 	// au clic sur la flèche précédente
 	const previous = carousel.querySelector('.carousel-realisations-controls .control-left');
 	previous.addEventListener('click', function() {
 		next.style.opacity = '1';
-		if (slide <= 1) {
-			slide = liste.length;
+		if (slide <= 0) {
+			slide = liste.length - 1;
 		} else {
 			slide--;
 		}
 		carousel.querySelector('.realisation.active').classList.remove('active');
-		carousel.querySelector('.realisation[data-real="' + slide + '"]').classList.add('active');
+		let activeSlide = carousel.querySelector('.realisation[data-real="' + slide + '"]');
+		activeSlide.classList.add('active');
+		// translation
+		let centered =
+			(container.getBoundingClientRect().width - activeSlide.getBoundingClientRect().width) / 2 -
+			25;
+		let translateSlide = 45 * slide;
+		container.style.transform = 'translateX(calc(-' + translateSlide + '% + ' + centered + 'px))';
 	});
 	// au clic sur la flèche suivante
 	const next = carousel.querySelector('.carousel-realisations-controls .control-right');
 	next.addEventListener('click', function() {
 		previous.style.opacity = '1';
-		if (slide >= liste.length) {
-			slide = 1;
+		if (slide >= liste.length - 1) {
+			slide = 0;
 		} else {
 			slide++;
 		}
 		carousel.querySelector('.realisation.active').classList.remove('active');
-		carousel.querySelector('.realisation[data-real="' + slide + '"]').classList.add('active');
+		let activeSlide = carousel.querySelector('.realisation[data-real="' + slide + '"]');
+		activeSlide.classList.add('active');
+		// translation
+		let centered =
+			(container.getBoundingClientRect().width - activeSlide.getBoundingClientRect().width) / 2 -
+			25;
+		let translateSlide = 45 * slide;
+		container.style.transform = 'translateX(calc(-' + translateSlide + '% + ' + centered + 'px))';
 	});
 });

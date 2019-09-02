@@ -2,9 +2,383 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="/css/basic.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Développement front-end - Stage Agence Seize</title>
   </head>
   <body>
+    <header>
+      <div class="burger-icon">
+        <svg width="45" height="34.345" viewBox="0 0 45 34.345">
+            <g id="Menu" transform="translate(2 2)">
+              <line id="Ligne_1" x2="37.848" fill="none" stroke="#fa7332" stroke-linecap="round" stroke-width="4"/>
+              <line id="Ligne_2" x2="37.848" transform="translate(0 12.174)" fill="none" stroke="#fa7332" stroke-linecap="round" stroke-width="4"/>
+              <line id="Ligne_3" x2="37.848" transform="translate(0 23.86)" fill="none" stroke="#fa7332" stroke-linecap="round" stroke-width="4"/>
+            </g>
+        </svg>
+      </div>
+      <div class="menu">
+        <div class="screen"></div>
+        <div class="menu-container grid60">
+          <div class="menu-container-left">
+            <nav>
+              <a href="/index.html" class="menu-item">
+                <span class="menu-item-titre">Introduction</span>
+                <span data-color="peach" class="menu-item-sous-titre">Avant-propos & problématique</span>
+              </a>
+              <a href="/pages/agence-seize.html" class="menu-item">
+                <span class="menu-item-titre">L'Agence Seize</span>
+                <span data-color="orange" class="menu-item-sous-titre">Présentation & vie de l'agence</span>
+              </a>
+              <a href="/pages/developpement-front.html" class="menu-item">
+                <span class="menu-item-titre">Développement front-end</span>
+                <span data-color="yellow" class="menu-item-sous-titre">Collaboration & réalisation d'un site</span>
+              </a>
+              <a href="/pages/gestion-de-projet.html" class="menu-item">
+                <span class="menu-item-titre">Gestion de projet</span>
+                <span data-color="yellow"  class="menu-item-sous-titre">Suivi d'un projet & autres missions</span>
+              </a>
+              <a href="/pages/webdesign.html" class="menu-item">
+                <span class="menu-item-titre">Web design</span>
+                <span data-color="yellow"  class="menu-item-sous-titre">Renfort & ergonomie</span>
+              </a>
+              <a href="/pages/plateforme-instagram.html" class="menu-item">
+                <span class="menu-item-titre">Projet transversal</span>
+                <span data-color="yellow"  class="menu-item-sous-titre">Design & développement</span>
+              </a>
+              <a href="/pages/bilan.html" class="menu-item">
+                <span class="menu-item-titre">Conclusion</span>
+                <span data-color="purple" class="menu-item-sous-titre">Analyse, bilan & remerciements</span>
+              </a>
+            </nav>
+            <div class="menu-container-left-bottom">
+              <span>Anaïs Appéré-Guillemot <br>ECV Digital B2 </span>
+              <span>|</span>
+              <a href="/pages/sitemap.html">Plan du site</a>
+            </div>
+          </div>
+          <div class="menu-container-right">
+            <img src="/assets/img/menu.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <a href=""class="previous">
+          <img src="../assets/svg/arrow.svg" alt="">
+          <span>L'Agence Seize</span>
+        </a>
+        <span class="title">Développement front-end</span>
+        <a href=""class="next">
+          <span>Gestion de projet</span>
+          <img src="../assets/svg/arrow.svg" alt="">
+        </a>
+      </div>
+      <div class="suivi"></div>
+    </header>
+    <div class="first-screen grid-double">
+      <div class="intro grid50">
+        <div class="content">
+          <h1>Développement front-end</h1>
+          <div class="sous-titres">
+            <a href="#">Mise en place</a>
+            <a href="#">Participation à des projets existants</a>
+            <a href="#">Réalisation d'un site</a>
+          </div>
+          <p>Mon rôle principal au cours de ces quatre mois a été le rôle de développeuse front-end. J’ai pu participer à une grande variété de projets en collaboration avec les autres développeurs ou seule. </p>
+        </div>
+      </div>
+      <div class="fullVisuel grid50">
+        <img src="../assets/img/gestion-de-projet.png" alt="">
+      </div>
+    </div>
+    <main>
+      <div class="main-content innerWidth">
+        <div class="smallWidth">
+          <h2>Mise en place</h2>
+          <p>À mon arrivée, j’ai pris connaissance de l’environnement de travail utilisé à l’agence et au sein du pôle digital. La communication interne est assurée par un Slack avec un channel par projet. Cela permet de centraliser les informations liées à un projet ou à une thématique particulière. Pour une gestion plus précise et suivie du projet, Trello est utilisé, souvent en collaboration directe avec le client. </p>
+          <p>Concernant les ressources spécifiques à un projet, un serveur est mis en place en interne pour que chacun puisse accéder aux fichiers. Enfin, plus spécifiquement au développement, les sites sont tous archivés sur Bitbucket afin de faciliter la collaboration.</p>
+          <p>Durant la première semaine, j’ai principalement observé Thomas et réalisé quelques petites missions afin de me familiariser avec les différents projets en cours à l’agence. </p>
+        </div>
+        <div class="smallWidth">
+          <h2>Participation à des projets existants</h2>
+          <p></p>
+        </div>
+        <div class="smallWidth">
+          <h3>Kibolt</h3>
+          <p>Kibolt est une nouvelle marque du groupe Cogelec. Ils proposent un système de clé intelligente unique dont les accès peuvent être personnalisés via une application. Étant une nouvelle marque, ils ont fait appel à l’Agence Seize pour un site internet. J’ai pu participer au développement de ce site et prendre en charge quelques missions.</p>
+          <p>Ainsi, j’ai créé la page dédiée à la présentation de l’application en front et en back via Wordpress. Il s’agit d’une page très simple ce qui m’a permis de me familiariser avec l’environnement et la manière de coder de l’agence. </p>
+          <p>Ensuite, j’ai élaboré le fonctionnement des deux pop-ins du site. La pop-in de contact et la pop-in d’inscription à la newsletter, toutes deux accessibles sur chaque page du site. </p>
+          <p>Après la mise en ligne du site, quelques optimisations possibles du site ont été remontées. Par exemple, sur une page produit, on peut trouver un tableau de caractéristiques trop long pour la lecture sur mobile. Il a donc fallu passer ce tableau en accordéon afin de n’afficher que les informations nécessaires, les unes après les autres. </p>
+        </div>
+        <div class="carousel-realisations">
+          <div class="carousel-realisations-container">
+            <div class="realisations-liste">
+              <div class="realisation grid45" data-real="0">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="1">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary-paysage.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="2">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-realisations-controls">
+            <div class="control-left">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+            <div class="control-right">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="grid-double">
+          <div class="right grid50">
+            <h3>ClicPool</h3>
+            <p>ClicPool propose des kits pour monter soi-même sa piscine. Ils ont également fait appel à l’Agence Seize pour la création d’un site internet.</p>
+            <p>Mon travail sur ce projet fut plutôt bref, le projet étant à un stade avancé de la production à mon arrivée. J’ai néanmoins pu participer à la réalisation de la page Actualités, en desktop et en responsive.</p>
+          </div>
+          <div class="left grid50">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="smallWidth">
+          <h3>Garanka</h3>
+          <p>Garanka est un réseau de chauffagistes assurant l’installation, l’entretien et le dépannage de différents systèmes de chauffage. Ils se sont dirigés vers l’agence pour la création d’un site internet un an auparavant. Ce site voit régulièrement des évolutions, sous forme de lots. J’ai pu apporter mon aide sur la partie front du développement du lot 6. </p>
+          <p>Tout d’abord, j’ai effectué un recettage général du site, ce qui m’a permis de comprendre son arborescence assez complexe. La plupart des points relevés lors de ce recettage étant des optimisations front relativement simples, j’ai pu les prendre en charge. Il s’agissait principalement d’harmonisation de tailles de typographies ou de marges. </p>
+          <p>J’ai également intégré un simulateur d’aides financières. Le fonctionnement en back était déjà présent, il manquait simplement la touche ergonomique et graphique. J’ai, ainsi, optimisé la partie recherche et la partie résultats, en version desktop et mobile. </p>
+          <p>Une autre amélioration en responsive fut l’implémentation d’un slider. À l’origine, la présentation des contrats d’entretien suivait une mise en page classique où les offres étaient les unes en dessous des autres. J’ai donc pu mettre en place mon premier (mais loin d’être le dernier) carrousel fonctionnant au swipe, grâce à la librairie Hammer.js.</p>
+        </div>
+        <div class="carousel-realisations">
+          <div class="carousel-realisations-container">
+            <div class="realisations-liste">
+              <div class="realisation grid45" data-real="0">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="1">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary-paysage.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="2">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-realisations-controls">
+            <div class="control-left">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+            <div class="control-right">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="smallWidth">
+          <h3>Comera Cuisines</h3>
+          <p>Comera Cuisines est un fabricant de cuisines dont le réseau est composé d’une cinquantaine de concessionnaires en France. Pour ce client, j’ai pu effectuer des missions que je n’avais jamais faites précédemment. </p>
+          <p>En premier temps, j’ai réalisé des bannières AMPHTML avec le logiciel Google Web Designer. Pour cela, les GIFS réalisés au préalable pour la campagne me sont livrés aux différents formats et je les importe dans le logiciel afin de créer un fichier interprétable par Google. Ces bannières sont utilisées dans le cadre d’une campagne display qui peut être locale ou nationale. Dans le cadre d’une campagne locale, le nom du magasin le plus proche de l’utilisateur est affiché sur le visuel. Il faut donc ajouter une variable sur les bannières destinées à la communication locale.</p>
+          <p>Ensuite, j’ai intégré un template d’email à l’aide de Beefree. Ce service en ligne permet de mettre facilement en page un email, tout en respectant les contraintes des différents systèmes de messagerie. </p>
+        </div>
+        <div class="carousel-realisations">
+          <div class="carousel-realisations-container">
+            <div class="realisations-liste">
+              <div class="realisation grid45" data-real="0">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="1">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary-paysage.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="2">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-realisations-controls">
+            <div class="control-left">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+            <div class="control-right">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="grid-double">
+          <div class="right grid50">
+            <h3>IASP</h3>
+            <p>IASP (International Association of Science Parks and Areas of Innovation) est une association organisant chaque année un événement. Cette année, l’événement se tient à Nantes du 24 au 27 septembre 2019 et l’agence a été chargée de développer ce site événementiel. À mon arrivée, le site était déjà en ligne et fonctionnel. Cependant, quelques changements sur la page du programme ont été demandés par le client. J’ai donc pris en charge ces modifications en remodelant la structure de la page d’origine. </p>
+          </div>
+          <div class="left grid50">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="grid-double">
+          <div class="right grid50">
+            <img src="" alt="">
+          </div>
+          <div class="left grid50">
+            <h3>SGS</h3>
+            <p>Le groupe SGS est composé de trois réseaux de contrôle technique : Auto Sécurité, Sécuritest et Vérif’Autos. Afin de dynamiser l’activité du groupe, l’agence a réalisé un site internet comportant des conseils pratiques mais aussi un jeu concours. Un tirage au sort ayant lieu chaque mois, il a fallu développer une page répertoriant les gagnants selon le lot gagné et le mois. </p>
+          </div>
+        </div>
+        <div class="grid-double">
+          <div class="right grid50">
+            <h3>L'Expert Fenêtre</h3>
+            <p>L’Expert Fenêtre est un réseau de conseillers, de vendeurs et d’installateurs de fenêtres et d’ouvertures. Leur site existe depuis un moment mais ils ont souhaité ajouter une rubrique Foire aux Questions. </p>
+            <p>Thomas et moi nous sommes répartis cette mission. Il s’est occupé de toute la partie fonctionnelle, notamment des filtres, et j’ai travaillé sur le front de ces pages. </p>
+          </div>
+          <div class="left grid50">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="smallWidth">
+          <h3>Concept Alu</h3>
+          <p>Concept Alu est un fabricant d’extensions, de vérandas, de pergolas et d’abris de piscine en aluminium. Le réseau est constitué de plus de soixante concessionnaires en France. L’agence a remporté la consultation suite à leur appel d’offre pour la refonte de leur site. </p>
+          <p>J’ai participé à ce projet en développant quatre pages : la page promotion, la page où tous les points de ventes sont répertoriés, la page d’un point de vente et la page d’historique de la marque (dont la mise en page n’avait pas été maquettée). </p>
+          <p>J’ai également adapté une partie du site en version responsive. <br>Pour finir, deux templates d’email étaient prévus pour ce site. Après les avoir maquetté, je me suis chargée de les intégrer avec Beefree.</p>
+        </div>
+        <div class="carousel-realisations">
+          <div class="carousel-realisations-container">
+            <div class="realisations-liste">
+              <div class="realisation grid45" data-real="0">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="1">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary-paysage.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="2">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-realisations-controls">
+            <div class="control-left">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+            <div class="control-right">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+          </div>
+        </div>
 
+        <div class="smallWidth">
+          <h2>Réalisation d'un site</h2>
+          <p>J’ai eu l’opportunité de gérer de manière autonome le développement d’un site vitrine pour le client SOCOREVE. Il s’agit d’un bureau d’étude pour la conception et la rénovation de maison qui souhaitait voir son site mis à jour. </p>
+          <p>Bien que ce projet soit mené de manière autonome, j’ai tout de même été aidée par Thomas et par les autres développeurs du pôle. </p>
+          <p>J’ai donc commencé par mettre en place l’environnement de développement, c’est-à-dire le wordpress et le thème utilisé pour la majorité des sites développés à l’agence. Ce thème permet d’avoir une structure commune et ainsi d’harmoniser le développement. </p>
+        </div>
+        <div class="smallWidth">
+          <p>Une fois la mise en place effectuée, j’ai pu commencer le développement. J’ai commencé par les pages de contenus simples telles que la home et la page de présentation des maisons murs bois massifs. Ensuite, j’ai intégré les composants de formulaire de contact et de coordonnées, qui se retrouvent à plusieurs endroits du site. Je suis ensuite passée au développement de pages plus spécifiques telles que les pages présentant les différentes offres ou la page des réalisations, fonctionnant avec un système de filtres. Finalement, j’ai adapté le site en version responsive.</p>
+          <p>Tout au long du projet, j’ai fait quelques points avec la web designeuse en charge du design afin de valider certains fonctionnements et animations. </p>
+        </div>
+        <div class="carousel-realisations">
+          <div class="carousel-realisations-container">
+            <div class="realisations-liste">
+              <div class="realisation grid45" data-real="0">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="1">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary-paysage.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+              <div class="realisation grid45" data-real="2">
+                <div class="realisation-visuel">
+                  <img src="../assets/img/temporary.jpg" alt="">
+                </div>
+                <div class="realisation-legende">
+                  <p>This is a legende</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-realisations-controls">
+            <div class="control-left">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+            <div class="control-right">
+              <img src="../assets/svg/arrow.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="suite-lecture">
+
+      </div>
+      <div class="pop-in">
+        <div class="pop-in-screen"></div>
+        <div class="pop-in-close"></div>
+        <img class="pop-in-img" src="" alt="">
+      </div>
+    </main>
+    <script src="/js/main.js" charset="utf-8"></script>
   </body>
 </html>

@@ -1,12 +1,53 @@
 @import '../vars.scss';
+@keyframes rotating {
+	0% {
+		transform: rotate(-3deg);
+	}
+	100% {
+		transform: rotate(3deg);
+	}
+}
 .home {
-	h1 {
-		font-size: 5rem;
-	}
-	h2 {
-		font-family: $fontTexte;
-	}
-	strong {
-		color: $purple;
+	.landing-screen {
+		min-height: 100vh;
+		position: relative;
+		&-visuel {
+			#luminaires,
+			#rambarde_bas {
+				z-index: 100;
+				transform-origin: top;
+			}
+			#luminaires {
+				transform: rotate(-3deg);
+				animation: rotating 4s ease-in-out infinite alternate;
+			}
+		}
+		&-title {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			@media (min-width: 768px) {
+				max-width: 70%;
+			}
+			img {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				max-width: 100%;
+			}
+			.text {
+				z-index: 1;
+				position: relative;
+				h1 {
+					font-size: 5rem;
+				}
+				h2 {
+					font-family: $fontTexte;
+				}
+				strong {
+					color: $purple;
+				}
+			}
+		}
 	}
 }

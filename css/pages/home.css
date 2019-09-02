@@ -1,8 +1,52 @@
-.home h1 {
-  font-size: 5rem; }
+@-webkit-keyframes rotating {
+  0% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+  100% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); } }
 
-.home h2 {
-  font-family: "FrankRuhl-Regular"; }
+@keyframes rotating {
+  0% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+  100% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); } }
 
-.home strong {
-  color: #bf81ff; }
+.home .landing-screen {
+  min-height: 100vh;
+  position: relative; }
+  .home .landing-screen-visuel #luminaires,
+  .home .landing-screen-visuel #rambarde_bas {
+    z-index: 100;
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top; }
+  .home .landing-screen-visuel #luminaires {
+    -webkit-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-animation: rotating 4s ease-in-out infinite alternate;
+    animation: rotating 4s ease-in-out infinite alternate; }
+  .home .landing-screen-title {
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+    @media (min-width: 768px) {
+      .home .landing-screen-title {
+        max-width: 70%; } }
+    .home .landing-screen-title img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      max-width: 100%; }
+    .home .landing-screen-title .text {
+      z-index: 1;
+      position: relative; }
+      .home .landing-screen-title .text h1 {
+        font-size: 5rem; }
+      .home .landing-screen-title .text h2 {
+        font-family: "FrankRuhl-Regular"; }
+      .home .landing-screen-title .text strong {
+        color: #bf81ff; }
