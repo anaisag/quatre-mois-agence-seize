@@ -23,6 +23,10 @@
     display: flex;
     max-height: 69vh;
     overflow: hidden; }
+    .agence .first-screen .video img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      width: 100%; }
     .agence .first-screen .video video {
       min-width: 100%;
       -o-object-fit: cover;

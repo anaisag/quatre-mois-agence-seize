@@ -1,7 +1,6 @@
-new Freezeframe({
-	selector: '.interview',
-	trigger: 'click',
-});
+const home = document.querySelector('.home');
+const header = document.querySelector('header');
+
 //fonctionnement du menu
 const menuIcon = document.querySelector('.burger-icon');
 const menu = document.querySelector('.menu');
@@ -9,11 +8,22 @@ menuIcon.addEventListener('click', function() {
 	menuIcon.classList.toggle('active');
 	if (menuIcon.classList.contains('active')) {
 		menu.style.display = 'block';
+		if (home && window.scrollY < header.offsetTop) {
+			menu.style.top = window.scrollY + 'px';
+			menuIcon.style.position = 'absolute';
+		}
 		setTimeout(function() {
 			menu.classList.add('active');
+			if (home && window.scrollY < header.offsetTop) {
+				menuIcon.style.top = window.scrollY + 'px';
+			}
 		}, 100);
 	} else {
 		menu.classList.remove('active');
+		menuIcon.style.position = 'relative';
+		if (home && window.scrollY < header.offsetTop) {
+			menuIcon.style.top = '0';
+		}
 		setTimeout(function() {
 			menu.style.display = 'none';
 		}, 500);
@@ -24,17 +34,46 @@ const navigation = document.querySelector('.navigation');
 if (navigation) {
 	scrollNavigation();
 }
+
 function scrollNavigation() {
+	if (!home) {
+		window.addEventListener('scroll', function() {
+			if (window.scrollY > 1) {
+				navigation.parentNode.classList.add('scrolled');
+				navigation.parentNode.querySelector('.suivi').style.width =
+					(window.scrollY + window.innerHeight) /
+						document.body.getBoundingClientRect().height *
+						100 +
+					'%';
+			} else {
+				navigation.parentNode.classList.remove('scrolled');
+				navigation.parentNode.querySelector('.suivi').style.width = '0';
+			}
+		});
+	}
+}
+// menu sur la home & scroll down
+if (home) {
+	homeMenu();
+	scrollDown();
+}
+function homeMenu() {
+	const offsetHeader = header.offsetTop - 30;
+	const content = document.querySelector('.main-content');
 	window.addEventListener('scroll', function() {
-		if (window.scrollY > 1) {
-			navigation.parentNode.classList.add('scrolled');
-			navigation.parentNode.querySelector('.suivi').style.width =
-				(window.scrollY + window.innerHeight) / document.body.getBoundingClientRect().height * 100 +
-				'%';
+		if (window.scrollY > offsetHeader) {
+			header.classList.add('scrolling');
+			content.style.marginTop = header.getBoundingClientRect().height + '30px';
 		} else {
-			navigation.parentNode.classList.remove('scrolled');
-			navigation.parentNode.querySelector('.suivi').style.width = '0';
+			header.classList.remove('scrolling');
+			content.style.marginTop = '0';
 		}
+	});
+}
+function scrollDown() {
+	const scroll = document.querySelector('.landing-screen-scroll');
+	scroll.addEventListener('click', function() {
+		header.scrollIntoView({ behavior: 'smooth' });
 	});
 }
 // fonctionnement des carousels
