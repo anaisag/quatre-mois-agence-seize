@@ -85,26 +85,17 @@ carousels.forEach(function(carousel) {
 	const liste = container.querySelectorAll('.realisation');
 	////// Zoom au clic sur une image
 	const imgs = container.querySelectorAll('img');
-	const popIn = document.querySelector('.pop-in');
-	const popInImg = popIn.querySelector('.pop-in-img');
-	const close = popIn.querySelector('.pop-in-close');
-	imgs.forEach(function(img) {
-		img.addEventListener('click', function() {
-			popInImg.src = img.src;
-			popIn.style.display = 'flex';
-			popIn.classList.add('active');
-		});
-	});
-	close.addEventListener('click', function() {
-		popIn.classList.remove('active');
-		popIn.style.display = 'none';
-	});
+	zoomImg(imgs);
 	// centrer la deuxième slide
 	const secondSlide = container.querySelector('.realisation[data-real="1"]');
 	secondSlide.classList.add('active');
 	const defaultCenter =
 		(container.getBoundingClientRect().width - secondSlide.getBoundingClientRect().width) / 2 - 25;
-	container.style.transform = 'translateX(calc(-45% + ' + defaultCenter + 'px))';
+	if (window.innerWidth < 768) {
+		container.style.transform = 'translateX(calc(-70% + ' + defaultCenter + 'px))';
+	} else {
+		container.style.transform = 'translateX(calc(-45% + ' + defaultCenter + 'px))';
+	}
 	// au clic sur la flèche précédente
 	const previous = carousel.querySelector('.carousel-realisations-controls .control-left');
 	previous.addEventListener('click', function() {
@@ -121,8 +112,13 @@ carousels.forEach(function(carousel) {
 		let centered =
 			(container.getBoundingClientRect().width - activeSlide.getBoundingClientRect().width) / 2 -
 			25;
-		let translateSlide = 45 * slide;
-		container.style.transform = 'translateX(calc(-' + translateSlide + '% + ' + centered + 'px))';
+		let translateSlide;
+		if (window.innerWidth < 768) {
+			translateSlide = 70 * slide;
+		} else {
+			translateSlide = 45 * slide;
+		}
+		container.style.transform = 'translateX(calc(-' + translateSlide + '% + ' + centered + '25px))';
 	});
 	// au clic sur la flèche suivante
 	const next = carousel.querySelector('.carousel-realisations-controls .control-right');
@@ -140,7 +136,48 @@ carousels.forEach(function(carousel) {
 		let centered =
 			(container.getBoundingClientRect().width - activeSlide.getBoundingClientRect().width) / 2 -
 			25;
-		let translateSlide = 45 * slide;
-		container.style.transform = 'translateX(calc(-' + translateSlide + '% + ' + centered + 'px))';
+		let translateSlide;
+		if (window.innerWidth < 768) {
+			translateSlide = 70 * slide;
+		} else {
+			translateSlide = 45 * slide;
+		}
+		container.style.transform = 'translateX(calc(-' + translateSlide + '% + ' + centered + '25px))';
 	});
+});
+// zoom au clic sur une image
+function zoomImg(images) {
+	const popIn = document.querySelector('.pop-in');
+	const popInImg = popIn.querySelector('.pop-in-img');
+	const close = popIn.querySelector('.pop-in-close');
+	images.forEach(function(img) {
+		img.addEventListener('click', function() {
+			popInImg.src = img.src;
+			popIn.style.display = 'flex';
+			popIn.classList.add('active');
+		});
+	});
+	close.addEventListener('click', function() {
+		popIn.classList.remove('active');
+		popIn.style.display = 'none';
+	});
+}
+const dev = document.querySelector('.developpement');
+if (dev) {
+	zoomDev();
+}
+function zoomDev() {
+	const imgs = document.querySelectorAll('.long img');
+	zoomImg(imgs);
+}
+// sous menu interne
+const sousTitres = document.querySelectorAll('.sous-titres span');
+const titres = document.querySelectorAll('h2');
+let index = 0;
+sousTitres.forEach(function(sousTitre) {
+	sousTitre.dataset.index = index;
+	sousTitre.addEventListener('click', function() {
+		titres[sousTitre.dataset.index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+	});
+	index++;
 });

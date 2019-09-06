@@ -1,13 +1,13 @@
 @font-face {
-  src: url(/assets/fonts/FrankRuhlLibre-Bold.ttf);
+  src: url(/stage-agence-seize/assets/fonts/FrankRuhlLibre-Bold.ttf);
   font-family: 'FrankRuhl-Bold'; }
 
 @font-face {
-  src: url(/assets/fonts/FrankRuhlLibre-Regular.ttf);
+  src: url(/stage-agence-seize/assets/fonts/FrankRuhlLibre-Regular.ttf);
   font-family: 'FrankRuhl-Regular'; }
 
 @font-face {
-  src: url(/assets/fonts/Roboto-Light.ttf);
+  src: url(/stage-agence-seize/assets/fonts/Roboto-Light.ttf);
   font-family: 'Roboto'; }
 
 html {
@@ -131,6 +131,12 @@ a {
   -ms-flex: 45%;
   flex: 45%;
   max-width: 45%; }
+  @media (max-width: 768px) {
+    .grid45 {
+      -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+      flex: 70%;
+      max-width: 70%; } }
 
 .grid40 {
   -webkit-box-flex: 40%;
@@ -478,6 +484,12 @@ header {
         -ms-flex: 100%;
         flex: 100%;
         max-width: 100%; } }
+  .grid-double .long {
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-height: 350px;
+    overflow: hidden;
+    cursor: pointer; }
   .grid-double .left {
     margin-right: 30px; }
   .grid-double .right {
@@ -492,6 +504,20 @@ header {
   margin: 100px 0 30px;
   overflow: hidden;
   z-index: 1; }
+  @media (max-width: 768px) {
+    .suite-lecture .suite-lecture-suite,
+    .suite-lecture .suite-lecture-overlay {
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%); }
+    .suite-lecture .suite-lecture-topic img {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1); }
+    .suite-lecture .suite-lecture-topic .content {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0); } }
   .suite-lecture:hover .suite-lecture-suite,
   .suite-lecture:hover .suite-lecture-overlay {
     -webkit-transform: translateX(-100%);
@@ -501,7 +527,7 @@ header {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1); }
-  .suite-lecture:hover .suite-lecture-topic span {
+  .suite-lecture:hover .suite-lecture-topic .content {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0); }
@@ -527,6 +553,17 @@ header {
       object-position: center;
       position: absolute;
       max-width: 100%; }
+    .suite-lecture-suite .content, .suite-lecture-topic .content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      z-index: 1; }
+      .suite-lecture-suite .content img, .suite-lecture-topic .content img {
+        width: 30px;
+        margin-right: 20px; }
   .suite-lecture-suite, .suite-lecture-overlay {
     position: absolute;
     z-index: 2;
@@ -537,17 +574,6 @@ header {
     background-color: #ffb997; }
     .suite-lecture-suite > img {
       opacity: 1; }
-    .suite-lecture-suite .content {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      z-index: 1; }
-      .suite-lecture-suite .content img {
-        width: 30px;
-        margin-right: 20px; }
     .suite-lecture-suite span {
       color: #3a007e;
       font-size: 1.2rem;
@@ -565,7 +591,7 @@ header {
       -webkit-transition: 1s 0.25s ease-in-out;
       -o-transition: 1s 0.25s ease-in-out;
       transition: 1s 0.25s ease-in-out; }
-    .suite-lecture-topic span {
+    .suite-lecture-topic .content {
       font-family: "FrankRuhl-Regular";
       font-size: 1.5rem;
       z-index: 1;
@@ -576,6 +602,9 @@ header {
       -webkit-transition: 0.4s 0.15s ease-in-out;
       -o-transition: 0.4s 0.15s ease-in-out;
       transition: 0.4s 0.15s ease-in-out; }
+      @media (min-width: 768px) {
+        .suite-lecture-topic .content img {
+          display: none; } }
 
 .first-screen {
   min-height: 100vh; }
@@ -609,17 +638,18 @@ header {
         font-family: "Roboto";
         color: #bf81ff;
         margin-bottom: 30px; }
-        .first-screen .intro .content .sous-titres a {
+        .first-screen .intro .content .sous-titres span {
           position: relative;
           z-index: 0;
           width: -webkit-fit-content;
           width: -moz-fit-content;
-          width: fit-content; }
-          .first-screen .intro .content .sous-titres a:not(:last-child) {
+          width: fit-content;
+          cursor: pointer; }
+          .first-screen .intro .content .sous-titres span:not(:last-child) {
             margin-bottom: 5px; }
-          .first-screen .intro .content .sous-titres a:hover:after {
+          .first-screen .intro .content .sous-titres span:hover:after {
             width: calc(100% + 30px); }
-          .first-screen .intro .content .sous-titres a:after {
+          .first-screen .intro .content .sous-titres span:after {
             content: '';
             position: absolute;
             left: -10px;
@@ -688,6 +718,7 @@ header {
           overflow: hidden; }
           .carousel-realisations-container .realisations-liste .realisation-visuel img {
             max-width: 100%;
+            min-height: 100px;
             -o-object-fit: cover;
             object-fit: cover;
             cursor: pointer; }
